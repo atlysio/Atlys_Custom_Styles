@@ -1,6 +1,14 @@
 
+<div class="col s12">
+	<div class="col s12">
+		<h5 class="xl-font upcase indigo-text text-accent-1 thin">Custom Style Sheet</h5>
+	</div>
+</div>
 
-<textarea>
+<%= form_tag save_custom_style_path, method: :post do %>
 
+	<textarea name="style"></textarea>
 
-</textarea>
+	<%= submit_tag "Save" %>
+
+<% end %>

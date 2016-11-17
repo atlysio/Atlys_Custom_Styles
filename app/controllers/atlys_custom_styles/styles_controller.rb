@@ -6,8 +6,22 @@ module AtlysCustomStyles
 
     # GET /styles
     def index
-
+	file = "public/custom_style.css"
+	if File.exist?(file)
+	@textarea = File.read(file)
+	else
+	@textarea = ""
+	end
     end
+
+
+    def save
+	@textarea = params[:style]
+	file = "public/custom_style.css"
+	File.write(file, @textarea)
+	redirect_to custom_style_index_path
+    end
+
 
     private
       # Use callbacks to share common setup or constraints between actions.
