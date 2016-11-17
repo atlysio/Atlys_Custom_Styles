@@ -1,8 +1,8 @@
 require_dependency "atlys_custom_styles/application_controller"
 
 module AtlysCustomStyles
-  class StylesController < ApplicationController
-    before_action :set_style, only: [:show, :edit, :update, :destroy]
+  class StylesController < ::ApplicationController
+    layout "admin"
 
     # GET /styles
     def index
