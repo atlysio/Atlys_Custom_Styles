@@ -1,4 +1,7 @@
 
+<script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
+
+
 <div class="col s12">
 	<div class="col s12">
 		<h5 class="xl-font upcase indigo-text text-accent-1 thin">Custom Style Sheet</h5>
@@ -7,8 +10,8 @@
 
 <%= form_tag atlys_custom_styles.save_custom_style_path, method: :post do %>
 
-	<textarea name="style"></textarea>
+	<code class="prettyprint" name="style"><%= @textarea %></code>
 
-	<%= submit_tag "Save" %>
+	<%= submit_tag "Save", class: "btn" %>
 
 <% end %>
