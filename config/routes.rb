@@ -1,3 +1,3 @@
 AtlysCustomStyles::Engine.routes.draw do
-  resources :styles
+  get 'admin/styling', to: 'styles#index', as: 'custom_style_index'
 end
