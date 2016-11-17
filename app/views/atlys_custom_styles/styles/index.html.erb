@@ -1,5 +1,11 @@
 
-<script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
+<link rel="stylesheet" href="https://codemirror.net/lib/codemirror.css">
+<script src="https://codemirror.net/lib/codemirror.js"></script>
+<script>
+  var editor = CodeMirror.fromTextArea(document.getElementById("cssstyle"), {
+    lineNumbers: true
+  });
+</script>
 
 
 <div class="col s12">
@@ -10,7 +16,7 @@
 
 <%= form_tag atlys_custom_styles.save_custom_style_path, method: :post do %>
 
-	<code class="prettyprint" name="style"><%= @textarea %></code>
+	<textarea id="cssstyle" class="col s10 offset-s1 white prettyprint" name="style"><%= @textarea %></textarea>
 
 	<%= submit_tag "Save", class: "btn" %>
 
