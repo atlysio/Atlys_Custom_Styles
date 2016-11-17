@@ -32,7 +32,7 @@
 <% end %>
 
 <script>
-$(document).on("page:load page:update", function() {
+$(document).on("ready", function() {
   var editor = CodeMirror.fromTextArea(document.getElementById("cssstyle"), {
     lineNumbers: true,
     viewportMargin: Infinity
