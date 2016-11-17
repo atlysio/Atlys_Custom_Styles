@@ -16,7 +16,7 @@
 
 <%= form_tag atlys_custom_styles.save_custom_style_path, method: :post do %>
 
-	<textarea id="cssstyle" class="col s10 offset-s1 white prettyprint" name="style"><%= @textarea %></textarea>
+	<textarea id="cssstyle" class="col s10 offset-s1 white prettyprint" name="style" value="<%= @textarea %>"></textarea>
 
 	<%= submit_tag "Save", class: "btn" %>
 
