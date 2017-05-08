@@ -51,8 +51,6 @@ function initCodeMirror() {
     var textbox = "<textarea id=\"cssstyle\" class=\"col s10 offset-s1 white prettyprint\" name=\"style\"></textarea>";
     $("#customstyleform").html(textbox);
 
-    //<%= @textarea %>
-
     var editor = CodeMirror.fromTextArea(document.getElementById("cssstyle"), {
         lineNumbers: true,
         viewportMargin: Infinity
