@@ -32,9 +32,22 @@
 
 <script>
 $(document).on("ready page:change page:update", function() {
-  var editor = CodeMirror.fromTextArea(document.getElementById("cssstyle"), {
-    lineNumbers: true,
-    viewportMargin: Infinity
-  });
+
+    if(typeof CodeMirror == "undefined") {
+        $.getScript('https://codemirror.net/lib/codemirror.js', function() {
+            initCodeMirror();
+        });
+    } else {
+        initCodeMirror();
+    }
+
 });
+
+
+function initCodeMirror() {
+    var editor = CodeMirror.fromTextArea(document.getElementById("cssstyle"), {
+        lineNumbers: true,
+        viewportMargin: Infinity
+    });
+}
 </script>
