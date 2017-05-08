@@ -1,7 +1,6 @@
 
 <link rel="stylesheet" href="https://codemirror.net/lib/codemirror.css">
 <script src="https://codemirror.net/lib/codemirror.js"></script>
-
 <script src="https://codemirror.net/mode/css/css.js"></script>
 
 
@@ -27,12 +26,12 @@
 <% end %>
 </textarea>
 
-	<%= submit_tag "Save", class: "btn col s2 offset-s5" %>
+    <%= submit_tag "Save", class: "btn col s2 offset-s5" %>
 
 <% end %>
 
 <script>
-$(document).on("ready", function() {
+$(document).on("ready page:change page:update", function() {
   var editor = CodeMirror.fromTextArea(document.getElementById("cssstyle"), {
     lineNumbers: true,
     viewportMargin: Infinity
