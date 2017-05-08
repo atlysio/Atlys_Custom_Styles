@@ -12,6 +12,7 @@
 
 <%= form_tag atlys_custom_styles.save_custom_style_path, method: :post, class: "col s10 offset-s1" do %>
 
+    <div id="customstyleform">
 <textarea id="cssstyle" class="col s10 offset-s1 white prettyprint" name="style">
 <% if @textarea.empty? %>
 .exampleclass {
@@ -25,6 +26,7 @@
 <%= @textarea %>
 <% end %>
 </textarea>
+    </div>
 
     <%= submit_tag "Save", class: "btn col s2 offset-s5" %>
 
@@ -45,6 +47,12 @@ $(document).on("ready", function() {
 
 
 function initCodeMirror() {
+
+    var textbox = "<textarea id=\"cssstyle\" class=\"col s10 offset-s1 white prettyprint\" name=\"style\"></textarea>";
+    $("#customstyleform").html(textbox);
+
+    //<%= @textarea %>
+
     var editor = CodeMirror.fromTextArea(document.getElementById("cssstyle"), {
         lineNumbers: true,
         viewportMargin: Infinity
