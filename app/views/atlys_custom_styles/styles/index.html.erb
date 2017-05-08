@@ -31,7 +31,7 @@
 <% end %>
 
 <script>
-$(document).on("ready page:change page:update", function() {
+$(document).on("ready", function() {
 
     if(typeof CodeMirror == "undefined") {
         $.getScript('https://codemirror.net/lib/codemirror.js', function() {
