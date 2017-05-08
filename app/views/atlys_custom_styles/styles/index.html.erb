@@ -54,6 +54,6 @@ function initCodeMirror() {
     var editor = CodeMirror.fromTextArea(document.getElementById("cssstyle"), {
         lineNumbers: true,
         viewportMargin: Infinity
-    }).setValue("<%= URI.encode(@textarea) %>");
+    }).setValue(decodeURI("<%= URI.encode(@textarea) %>"));
 }
 </script>
