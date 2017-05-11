@@ -32,10 +32,21 @@
 <% end %>
 
 <script>
-$(document).on("ready", function() {
-  var editor = CodeMirror.fromTextArea(document.getElementById("cssstyle"), {
-    lineNumbers: true,
-    viewportMargin: Infinity
-  });
+$(document).on("ready page:change page:update page:load", function() {
+    if(typeof CodeMirror == "undefined") {
+        $.getScript('https://codemirror.net/lib/codemirror.js', function() {
+            initCodeMirror();
+        });
+    } else {
+        initCodeMirror();
+    }
 });
+function initCodeMirror() {
+    var textbox = "<textarea id=\"cssstyle\" class=\"col s10 offset-s1 white prettyprint\" name=\"style\"></textarea>";
+    $("#customstyleform").html(textbox);
+    var editor = CodeMirror.fromTextArea(document.getElementById("cssstyle"), {
+        lineNumbers: true,
+        viewportMargin: Infinity
+    }).setValue(decodeURI("<%= URI.encode(@textarea) %>"));
+}
 </script>
