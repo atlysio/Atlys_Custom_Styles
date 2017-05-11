@@ -35,8 +35,7 @@ $(document).on("ready page:change page:update page:load", function() {
 function initCodeMirror() {
     var textbox = "<textarea id=\"cssstyle\" class=\"col s10 offset-s1 white prettyprint\" name=\"style\"></textarea>";
     $("#customstyleform").html(textbox);
-    var thisInput = $("#cssstyle");
-    var editor = CodeMirror.fromTextArea(thisInput, {
+    var editor = CodeMirror.fromTextArea(document.getElementById("cssstyle"), {
         lineNumbers: true,
         viewportMargin: Infinity
     }).setValue(decodeURI("<%= URI.encode(@textarea) %>"));

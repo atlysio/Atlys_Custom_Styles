@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    atlys_custom_styles (0.1.51)
+    atlys_custom_styles (0.1.52)
       rails (>= 4.2.6, < 5.1)
 
 GEM
